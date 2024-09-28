@@ -50,9 +50,7 @@
           </table>
 <!--          左下角饼图的位置-->
           <div ref="pieChart" class="chart">
-
-
-
+             <chart1></chart1>
           </div>
         </div>
       </div>
@@ -82,10 +80,13 @@
   </div>
 </template>
 <script>
+import chart1 from './chart1.vue';
 import axios from 'axios';
 import ICountUp from 'vue-countup-v2'
 import 'echarts/map/js/china.js'
 import chinaJson from 'echarts/map/json/china.json'
+import SunburstChart from "./chart1.vue";
+import Chart1 from "./chart1.vue";
 // import sale from '../../../src/assets/js/sale.json'
 var Order = "orderID";
 //对json进行升序排序函数
@@ -186,6 +187,8 @@ var geoValue = [
 export default {
   name: 'index',
   components: {
+    Chart1,
+    SunburstChart,
     ICountUp
   },
 
@@ -1768,7 +1771,7 @@ export default {
 }
 
 .chart {
-  height: 300px;
+  height: 400px;
 }
 
 .echart {
